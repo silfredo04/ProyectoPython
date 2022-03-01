@@ -1,0 +1,34 @@
+<html>
+<br>
+<center>
+    {% include "superior/barra.html" %}
+
+    <body>
+        <h1 style="color: red">
+            esta es mi primera plantilla en django
+        </h1>
+
+        {% if nombre_persona == 'silfredo' %}
+        <p> hola silfredo</p>
+        {%else%}
+        <p>No eres silfredo</p>
+        {%endif%}
+
+
+
+        <p>El nombre del profesor es:{{nombre_persona.upper}} {{apellido_persona|lower}}</p>
+        <p>Estamos viendo el tema de las plantillas a dia: {{hora.day}}/{{hora.month}}/{{hora.year}}</p>
+        <p><strong>Temas del curso:</strong></p>
+        <p>
+            <ul>
+                {%if temas%} {% for i in temas %}
+                <li>{{i}} {{i|first|lower}}</li>
+                {% endfor %} {%else%}
+                <P>No hay elementos que mostrar</P>
+                {%endif%}
+            </ul>
+        </p>
+    </body>
+</center>
+
+</html>
